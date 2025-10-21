@@ -5,11 +5,12 @@ import connectDB from "./src/config/db.js";
 import morgan from "morgan";
 import satteliteRouter from "./src/routes/sattelite.route.js";
 import groupRouter from "./src/routes/group.route.js";
+import updateSatellites from "./src/services/refreshData.js";
 
 dotenv.config();
 
 connectDB();
-
+updateSatellites();
 const app = express();
 app.use(express.json());
 

@@ -2,7 +2,7 @@ import express from "express";
 import {
   getAllSatellites,
   getOneSatellite,
-} from "../controllers/sattelite.controller";
+} from "../controllers/sattelite.controller.js";
 const satteliteRouter = express.Router();
 
 satteliteRouter.get("/", getAllSatellites);

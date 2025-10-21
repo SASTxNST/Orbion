@@ -1,20 +1,22 @@
-import { Group } from "../models/Group.js";
+import { Group } from "../models/group.model.js";
 import { ApiError } from "../utils/api-error.js";
 import { ApiResponse } from "../utils/api-response.js";
 
 const getAllGroups = async (req, res) => {
   try {
-    const groups = await Group.find().select("name satellites");
-
-    const result = groups.map((g) => ({
-      name: g.name,
-      satelliteCount: g.satellites.length,
-    }));
+    const groups = await Group.aggregate([
+      {
+        $project: {
+          name: 1,
+          satelliteCount: { $size: "$satellites" }, // MongoDB counts array length
+        },
+      },
+    ]);
 
     res
       .status(200)
       .json(
-        new ApiResponse(200, "Groups fetched successfully", { groups: result })
+        new ApiResponse(200, "Groups fetched successfully", { groups: groups })
       );
   } catch (err) {
     console.error("Failed to fetch groups");

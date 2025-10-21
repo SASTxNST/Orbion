@@ -3,7 +3,7 @@ import express from "express";
 import {
   getAllGroups,
   getSatellitesByGroupName,
-} from "../controllers/group.controller";
+} from "../controllers/group.controller.js";
 
 const groupRouter = express.Router();
 
