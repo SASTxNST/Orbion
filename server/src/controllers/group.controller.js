@@ -35,10 +35,7 @@ const getSatellitesByGroupName = async (req, res) => {
     if (!group)
       return res.status(404).json(new ApiError(404, "Group not found"));
 
-    const satellites = group.satellites.map((s) => ({
-      name: s.name,
-      tle: s.tle,
-    }));
+    const satellites = group.satellites;
 
     res.status(200).json(
       new ApiResponse(200, "Fetched group successfully", {

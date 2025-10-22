@@ -6,6 +6,6 @@ import {
 const satteliteRouter = express.Router();
 
 satteliteRouter.get("/", getAllSatellites);
-satteliteRouter.get("/:name", getOneSatellite);
+satteliteRouter.get("/:objectId", getOneSatellite);
 
 export default satteliteRouter;
