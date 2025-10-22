@@ -14,10 +14,12 @@
     "@tanstack/react-query": "^5.90.5",
     "axios": "^1.12.2",
     "cesium": "^1.134.1",
+    "lucide-react": "^0.546.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.4",
     "resium": "^1.19.0-beta.1",
+    "satellite.js": "^6.0.1",
     "tailwindcss": "^4.1.15",
     "vite-plugin-cesium": "^1.2.23"
   },
